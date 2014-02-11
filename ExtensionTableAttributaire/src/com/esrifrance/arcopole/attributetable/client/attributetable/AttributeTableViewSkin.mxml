@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:attributetable="com.esrifrance.fxfmk.components.attributetable.attributetable.*">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("com.esrifrance.arcopole.attributetable.client.attributetable.AttributeTableView")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="selectionOrAll"/>
+	</fx:Declarations>
+	
+	<s:VGroup width="100%" height="100%" paddingBottom="10" paddingLeft="10" paddingTop="10" paddingRight="10">
+		
+		<s:HGroup>
+			<s:Label text="Vous consultez la table attributaire de la couche :"  height="25" />
+			<s:Label text="{hostComponent.currentLayerRef.name}"/>
+		</s:HGroup>
+		<s:HGroup>
+			<s:RadioButton value="all" id="showAllTable" label="Toute la table" group="{selectionOrAll}" selected="true"/>
+			<s:RadioButton value="selected" id="showOnlySelected" label="Sélection" group="{selectionOrAll}" />
+		</s:HGroup>
+		<attributetable:AttributeTableView id="attributeTable" skinClass="com.esrifrance.fxfmk.components.attributetable.attributetable.AttributeTableViewSkin" width="100%" height="100%"/>
+		
+		<s:HGroup>
+			<s:Label text="{attributeTable.selectableGraphics.length} Objets chargés."/>
+			<s:Label text="total : {hostComponent.totalFeatureCount} Objets."/>
+			<s:Button id="loadAllData" label="Charger tout" />
+			<s:Button id="zoomToAllSelectedFeature" label="Zoom sur la sélection" />
+			<s:Button id="exportToExcel" label="Export Excel"/>
+		</s:HGroup>
+		
+		
+	</s:VGroup>
+	
+</s:Skin>

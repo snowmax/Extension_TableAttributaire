@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx" clipAndEnableScrolling="true">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.esrifrance.fxfmk.components.attributetable.attributetable.AttributeTableEvent;
+			protected function cb_changeHandler(event:Event):void
+			{
+				// TODO Auto-generated method stub
+				var attributeTableEvent:AttributeTableEvent = new AttributeTableEvent(AttributeTableEvent.SELECTION_CHANGE);
+				attributeTableEvent.selectableGraphic = data as SelectableGrahic;
+				owner.dispatchEvent(attributeTableEvent);
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<s:CheckBox id="cb" selected="@{data.selected}" horizontalCenter="0" change="cb_changeHandler(event)"/>
+	
+</s:GridItemRenderer>
