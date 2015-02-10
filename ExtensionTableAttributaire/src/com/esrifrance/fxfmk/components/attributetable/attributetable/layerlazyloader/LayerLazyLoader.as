@@ -59,7 +59,7 @@ package com.esrifrance.fxfmk.components.attributetable.attributetable.layerlazyl
 			
 			this._layerRef = lref;
 			this._mapData = mapData;
-			this._datasource =  _mapData.createDataSource(lref);
+			this._datasource =  _mapData.createDataSource(lref) as IDataSourceLayer;
 			this._maxFeatureReturnCount = maxFeatureReturnCount;
 			this._dataTools = dataTools;
 			
